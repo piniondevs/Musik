@@ -67,8 +67,8 @@ client.on("message", async (message) => {
       queue.push(video);
       const musicEmbed = new Discord.MessageEmbed()
         .setColor("AQUA")
-        .setTitle(video.title)
-        .setDescription(`This song has been added by <@${message.author.id}>`);
+        .setTitle("SONG ADDED")
+        .setDescription(`Song added by <@${message.author.id}>`);
       message.channel.send(musicEmbed);
     }
  
@@ -103,9 +103,18 @@ client.on("message", async (message) => {
       const index = message.content.split(" ");
       index.shift();
  
-      queue.splice(index-1,1)
+      if (queue.length < parseInt(index)) {
+        message.channel.send('That does not exist!')
+      } else {
+        message.channel.send(
+          new Discord.MessageEmbed()
+            .setColor('AQUA')
+            .setTitle('Item Removed')
+            .setDescription(`**${JSON.stringify(queue[index - 1].title)}** has been deleted`)
+        )
  
-      message.channel.send(`${queue[0].title} was removed from the queue.`)
+        queue.splice(index - 1, 1);
+      }
     }
   }
 });
