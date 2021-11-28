@@ -1,0 +1,32 @@
+{
+  "name": "musik",
+  "version": "1.0.0",
+  "description": "A music bot which acts as a bad replacement to Groovy.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piniondevs/Musik.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piniondevs/Musik/issues"
+  },
+  "homepage": "https://github.com/piniondevs/Musik#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^4.4.0",
+    "usetube": "^2.1.4",
+    "ytdl-core": "^4.9.1"
+  }
+}
